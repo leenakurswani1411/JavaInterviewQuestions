@@ -1,3 +1,4 @@
+
 Que No.1 : Threads and ways of implementing a Thread in Java: 
 Answer   : In Java, a thread is a lightweight sub-process that allows you to perform multiple tasks concurrently. Threads are a fundamental concept for building multithreaded applications, which can take advantage of multi-core processors and improve the overall performance of your program. There are two main ways to implement a thread in Java:
 
