@@ -1,0 +1,41 @@
+Que No.1 : Threads and ways of implementing a Thread in Java: 
+Answer   : In Java, a thread is a lightweight sub-process that allows you to perform multiple tasks concurrently. Threads are a fundamental concept for building multithreaded applications, which can take advantage of multi-core processors and improve the overall performance of your program. There are two main ways to implement a thread in Java:
+
+Extending the Thread class:
+You can create a thread by extending the Thread class and overriding its run() method. Here's an example:
+
+        class MyThread extends Thread {
+            @Override
+            public void run() {
+                }
+            }
+        }
+        
+        public class Main {
+            public static void main(String[] args) {
+                MyThread thread1 = new MyThread();
+                thread1.start(); // Starts the thread
+            }
+        }
+
+Implementing the Runnable interface:
+Another way to create a thread is by implementing the Runnable interface and passing an instance of your class to a Thread object. This approach allows you to separate the code to be executed in the thread from the thread itself. Here's an example:
+
+        class MyRunnable implements Runnable {
+            @Override
+            public void run() {
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                MyRunnable myRunnable = new MyRunnable();
+                Thread thread2 = new Thread(myRunnable);
+                thread2.start(); 
+            }
+        }
+In both cases, you start the thread by calling the start() method on the Thread object. The Java Virtual Machine (JVM) will take care of executing the run() method in a separate thread. Using the Runnable interface is often preferred because it allows you to implement multiple interfaces or extend other classes, while you can only extend one class in Java.
+
+Additionally, you can manage and control threads using methods provided by the Thread class, like join(), sleep(), and interrupt(), to name a few. Proper synchronization mechanisms should be used when multiple threads need to access shared resources to avoid data corruption or race conditions.
+
+Que No 2 : 
