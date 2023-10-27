@@ -38,4 +38,30 @@ In both cases, you start the thread by calling the start() method on the Thread 
 
 Additionally, you can manage and control threads using methods provided by the Thread class, like join(), sleep(), and interrupt(), to name a few. Proper synchronization mechanisms should be used when multiple threads need to access shared resources to avoid data corruption or race conditions.
 
-Que No 2 : 
+Que No 2 : Define wait() and sleep() and notify() and notifyAll() in thread ?
+Answer : wait(): As the name suggests, it is a non-static method that causes the current thread to wait and go to sleep until some other threads call the notify () or notifyAll() method for the object’s monitor (lock).
+                 It simply releases the lock and is mostly used for inter-thread communication. It is defined in the object class, and should only be called from a synchronized context. 
+
+                        synchronized(monitor) 
+                        { 
+                        monitor.wait();       Here Lock Is Released by Current Thread  
+                        }
+
+        sleep(): As the name suggests, it is a static method that pauses or stops the execution of the current thread for some specified period.
+                 It doesn’t release the lock while waiting and is mostly used to introduce pause on execution. It is defined in thread class, and no need to call from a synchronized context.  
+                        synchronized(monitor) 
+                        { 
+                        Thread.sleep(1000);     Here Lock Is Held by The Current Thread 
+                        //after 1000 milliseconds, the current thread will wake up, or after we call that is interrupt() method 
+                        } 
+
+        notify(): It sends a notification and wakes up only a single thread instead of multiple threads that are waiting on the object’s monitor.
+
+        notifyAll(): It sends notifications and wakes up all threads and allows them to compete for the object's monitor instead of a single thread. 
+
+        start(): In simple words, the start() method is used to start or begin the execution of a newly created thread. When the start() method is called, a new thread is created and this newly created thread executes the task that is kept in the run() method. One can call the start() method only once.  
+
+        run(): In simple words, the run() method is used to start or begin the execution of the same thread. When the run() method is called, no new thread is created as in the case of the start() method. This method is executed by the current thread. One can call the run() method multiple times. 
+
+        join(): Method is generally used to pause the execution of a current thread unless and until the specified thread on which join is called is dead or completed. To stop a thread from running until another thread gets ended, this method can be used. It joins the start of a thread execution to the end of another thread’s execution. It is considered the final method of a thread class.
+
