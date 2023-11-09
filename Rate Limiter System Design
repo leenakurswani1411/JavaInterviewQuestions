@@ -1,0 +1,13 @@
+Question : Recuriter asked me to create custom algorithm to limit the transaction per second ? 
+Asnwer : Presenting the correct solution from google, chatgpt and other useful resources and specially from System design interview by Alex Xu. 
+         
+What does a rate limiter do :  A Rate Limiter limits the number of transaction requests allowed to be sent over a specified period. 
+                               If the API request count exceeds the threshold defined by the rate limiter, all the excess calls are blocked by using this algorithm.
+
+Where an we implement it : If we have microservice architecture and authentication middleware in it, we can implement rate limiter middleware here in server-side.
+                           For excessive calls after the threshold value we give 429, Too many request error. 
+
+Algorithm names : 1.Token bucket
+                  2.Leaky bucket
+                  3.Sliding window counter
+
