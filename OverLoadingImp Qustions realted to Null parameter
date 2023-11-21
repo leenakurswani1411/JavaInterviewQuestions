@@ -1,0 +1,40 @@
+Que: I have a method over-loading in Java. In one I am passing a string as a parameter and in another I am passing an object as a parameter. 
+     The return type of both methods is void. Please tell me if I call the method by providing null which method will get called?
+
+Ans: In Java, when you have method overloading and you call the method with a null argument, the compiler will choose the most specific method based on the parameter types. 
+If you have one method that takes a String and another that takes an Object, and you pass null, the compiler will choose the method with the most specific parameter type,
+which in this case is the one with the String parameter.
+
+public class OverloadingExample {
+
+    // Method with a String parameter
+    public static void printMessage(String message) {
+        System.out.println("Printing String: " + message);
+    }
+
+    // Method with an Object parameter
+    public static void printMessage(Object obj) {
+        System.out.println("Printing Object: " + obj);
+    }
+
+    public static void main(String[] args) {
+        // Calling the methods with null argument
+        printMessage(null);
+    }
+}
+
+Interviewer: 
+why string is the most specific in this example
+Answer: 
+
+Certainly, I'll provide a more detailed explanation.
+
+In Java, when the compiler is deciding which method to call during method overloading, it follows a process called "Compile-time Polymorphism" or "Static Binding." 
+This process involves determining the most specific method based on the static (compile-time) types of the arguments.
+String is a more specific type: String is a class that is more specific than Object. When you declare a method that takes a String parameter, 
+it explicitly indicates that it expects an argument of type String.
+
+The object is the root class for all Java classes. When you declare a method that takes an Object parameter, it indicates a broader acceptance 
+of different types of objects, including any objects of any class.
+In summary, the specificity of types in Java is based on the class hierarchy, and String being a more specific type than Object leads to the 
+compiler choosing the method with the String parameter when you pass null.
