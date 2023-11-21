@@ -8,18 +8,18 @@ which in this case is the one with the String parameter.
 public class OverloadingExample {
 
     // Method with a String parameter
-    public static void printMessage(String message) {
-        System.out.println("Printing String: " + message);
+    public static void print(String message) {
+        System. out.println("Printing String: " + message);
     }
 
     // Method with an Object parameter
-    public static void printMessage(Object obj) {
-        System.out.println("Printing Object: " + obj);
+    public static void print(Object obj) {
+        System. out.println("Printing Object: " + obj);
     }
 
     public static void main(String[] args) {
         // Calling the methods with null argument
-        printMessage(null);
+        print(null);
     }
 }
 
