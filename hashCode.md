@@ -4,7 +4,7 @@
 **Here's a simple explanation of how the default hashCode() method works and how you might implement it:**
 *Default Implementation (in Object class): The default hashCode() method in the Object class generates a hash code based on the memory address of the object. Two distinct objects, even if they have the same content, will have different hash codes unless their references point to the same memory location.*
 
-``java
+```java
 @Override
 public int hashCode() {
     return Objects.hash(id, name);
